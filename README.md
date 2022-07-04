@@ -18,3 +18,25 @@ Related to this [repository](https://github.com/GridexX/keeweb).
    echo "${USER}:${PASSWORD}" | base64 | tee -a .env-webdav
     ```
 1. Update variables in `.env-webdav` according to your needs.
+### Customization 
+This section is optionnal and show an approach how to use KeepassXC with the file hosted on your WedDAV server.  
+
+**⚠️ This section is related to KDE**
+
+The goal is to overrides commands launched when opening KeepassXC.  
+In KDE, we create application and specify commands to launch them. To do so :   
+1. Install [KeepassXC](https://keepassxc.org/download/#linux) on your computer. 
+1. Make sure to launch it with `keepass` command in terminal.
+1. Clone this repository, go in the folder cloned and make script files executable :
+    ```bash
+    chmod u+X *.sh
+    ```
+1. Right click on `Application Launcher` and `Edit Applications` in the menu.
+1. Add a custom entry `Keepass` and set a command to launch the `database_retrieve.sh` file (don't forget to use the path where the file is located).
+1. Save the changes, you're now ready to use KeepassXC with Keeweb 😄.
+
+**Tests**
+
+To check if the script is working, open the `database_retrieve.sh` file and run it.
+It should retrieve the database from Keeweb and save it in `${GK_PATH}/${GK_CONFIG_FILE}` file. 
+Try to modify some entry with the KeepassXC application and check if the changes are repercuted on Keeweb.
