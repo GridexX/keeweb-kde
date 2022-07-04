@@ -40,3 +40,6 @@ In KDE, we create application and specify commands to launch them. To do so :
 To check if the script is working, open the `database_retrieve.sh` file and run it.
 It should retrieve the database from Keeweb and save it in `${GK_PATH}/${GK_CONFIG_FILE}` file. 
 Try to modify some entry with the KeepassXC application and check if the changes are repercuted on Keeweb.
+
+--- 
+*&copy; Created by GridexX with 💻 Bash during a sunny day ☀️*
