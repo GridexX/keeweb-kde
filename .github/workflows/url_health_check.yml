@@ -1,0 +1,27 @@
+#
+name: URL health check
+
+on: 
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 9,21 * * *'
+
+jobs:
+  health_check:
+    runs-on: ubuntu-latest
+
+    steps:
+    -
+     name: Check the server URL
+     uses: jtalk/url-health-check-action@v2
+     with:
+       url: ${{secrets.GK_SERVER_URL}}
+       max-attempts: 3
+       retry-delay: 5s
+    -
+     name: Check the KDBX file
+     uses: enflo/curl-action@master
+     with:
+        curl: "-o database.kdbx ${{secrets.GK_SERVER_URL}}/webdav/database.kdbx --user ${{secrets.GK_SERVER_USER}}:${{secrets.GK_SERVER_PASSWORD}}"

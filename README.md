@@ -6,6 +6,8 @@
 
 Scripts related to synchronization between KeepassXC and Keeweb with KDE.
 Related to this [repository](https://github.com/GridexX/keeweb).
+
+![URL check](https://github.com/GridexX/keeweb-kde/actions/workflows/url_health_check.yml/badge.svg)
 </div>
 
 ### Installation
